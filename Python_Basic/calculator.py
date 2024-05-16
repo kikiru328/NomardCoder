@@ -68,40 +68,42 @@ while playing:
 
     operation = input(
         "Choose an operation:\n    Options are: + , - , * or /.  : ")
+    while operation not in default_operator:
+        print(f"Invalid operation : {operation}. Try Again")
+        operation = input(
+            "Choose an operation:\n    Options are: + , - , * or /.  : ")
 
     b = get_variable(2)
-    if operation in default_operator:
-        if operation == '+':
-            result = add(a, b)
-            print_result(result)
-            formula = get_formula(a, b, operation, result)
-            history.append(formula)
 
-        elif operation == '-':
-            result = minus(a, b)
-            print_result(result)
-            formula = get_formula(a, b, operation, result)
-            history.append(formula)
+    if operation == '+':
+        result = add(a, b)
+        print_result(result)
+        formula = get_formula(a, b, operation, result)
+        history.append(formula)
 
-        elif operation == '*':
-            result = multiply(a, b)
-            print_result(result)
-            formula = get_formula(a, b, operation, result)
-            history.append(formula)
+    elif operation == '-':
+        result = minus(a, b)
+        print_result(result)
+        formula = get_formula(a, b, operation, result)
+        history.append(formula)
 
-        elif operation == '/':
-            while b == 0:
-                print('You can\'t devide by 0')
-                b = int(input("Choose another one:\n"))
-                if b != 0:
-                    break
-            result = devide(a, b)
-            print_result(result)
-            formula = get_formula(a, b, operation, result)
-            history.append(formula)
+    elif operation == '*':
+        result = multiply(a, b)
+        print_result(result)
+        formula = get_formula(a, b, operation, result)
+        history.append(formula)
 
-    else:
-        print(f"Invalid operation : {operation}. Try Again")
+    elif operation == '/':
+        while b == 0:
+            print('You can\'t devide by 0')
+            b = get_variable(2)
+            if b != 0:
+                break
+        result = devide(a, b)
+        print_result(result)
+        formula = get_formula(a, b, operation, result)
+        history.append(formula)
+
 print("History:")
 for entry in history:
     print(entry)

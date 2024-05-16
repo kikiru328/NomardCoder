@@ -41,7 +41,7 @@ def devide(v1: int, v2: int) -> float:
 
 def get_formula(v1: int, v2: int, operation: str, result: float) -> str:
     """ Get formula Function"""
-    return f"{v1} {operation} {v2} = {result}."
+    return f"{v1} {operation} {v2} = {result}"
 
 
 def print_result(result: float):

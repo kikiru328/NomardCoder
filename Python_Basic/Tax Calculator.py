@@ -6,20 +6,22 @@ def get_yearly_revenue(monthly_revenue: int) -> int:
     Args:
         monthly_revenue (int): 월간매출
     Returns:
-        int: yearly_revenue, : 연간매출 
+        int: yearly_revenue, : 연간매출
     """
     return monthly_revenue * 12
+
 
 def get_yearly_expenses(monthly_expenses: int) -> int:
     """
     연간 비용 계산 수식
     월간비용 * 12개월
     Args:
-        monthly_expenses (int): 월간비용 
+        monthly_expenses (int): 월간비용
     Returns:
-        int: yearly_expenses : 연간비용 
+        int: yearly_expenses : 연간비용
     """
     return monthly_expenses * 12
+
 
 def get_tax_amount(profit: int) -> float:
     """
@@ -29,13 +31,14 @@ def get_tax_amount(profit: int) -> float:
         profit (int): 이익
 
     Returns:
-        float: 세금 계산 
+        float: 세금 계산
     """
     if profit > 100000:
         return profit * 0.25
     else:
         return profit * 0.15
-    
+
+
 def apply_tax_credits(tax_amount: float, tax_credits: float) -> float:
     """
     세금 공제액 수식
@@ -48,6 +51,8 @@ def apply_tax_credits(tax_amount: float, tax_credits: float) -> float:
         float: 세금 공재액
     """
     return tax_amount * tax_credits
+
+
 # ❌ Don't touch anthing below this line ❌
 
 monthly_revenue = 5500000

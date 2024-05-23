@@ -3,15 +3,18 @@ from django.http import HttpResponse
 from .models import Room
 
 
-# Create your views here.
 def see_all_rooms(request):
+    # get all the rooms
     rooms = Room.objects.all()
+
+    # render template
+    # render(request, template name)
     return render(
         request,
         "all_rooms.html",
         {
             "rooms": rooms,
-            "title": "Hello! this title comes from django!",
+            "title": "Hello! this tile comes from Django!",
         },
     )
 

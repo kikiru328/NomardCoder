@@ -36,8 +36,6 @@ class RoomAdmin(admin.ModelAdmin):
         "^price",  # startwith
         "owner__username",  # exact
     )
-    # def total_amenities(self, room):
-    #     return room.amenities.count()
 
 
 @admin.register(Amenity)

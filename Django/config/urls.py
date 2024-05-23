@@ -21,5 +21,6 @@ from django.urls import path, include  # url include everythong
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    # path("rooms/", include("rooms.urls")),
+    path("rooms/", include("rooms.urls")),
+    path("categories/", include("categories.urls")),
 ]
